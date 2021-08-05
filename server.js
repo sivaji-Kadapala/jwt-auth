@@ -12,7 +12,7 @@ const cors = require('cors');
 //2.intialize the express
 const app = express();
 //----------------------------------------------------------------------------
-const path = require('path');
+
 const PORT=process.env.PORT || 5000
 //--------------------------------------------------------------------------
 
@@ -33,12 +33,6 @@ app.use(express.json());
 app.use(cors({origin:"*"}))
 //------------------------------------------------------------------------------------
 
-app.get("/*",(req,res) => {
-     res.sendFile(path.join(__dirname,"build","index.html"))
-}
-   
-
-);
 //---------------------------------------------------------------------------------------
 
 //12For posting,it is asynchronous
@@ -75,7 +69,9 @@ app.post('/register',async (req, res) =>{
         return res.status(500).send('Internel Server Error')
     }
 })
-
+app.get("/",(req,res) => {
+    res.send("Memories API")
+})
 app.post('/login',async (req, res) => {
     try{//22.now  we need only two values
         const {email,password} = req.body;
