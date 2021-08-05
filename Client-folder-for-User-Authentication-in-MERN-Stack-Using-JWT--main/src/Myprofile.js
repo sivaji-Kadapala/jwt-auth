@@ -8,12 +8,12 @@ const Myprofile = () => {
     const [token,setToken] = useContext(store);
     const [data,setData] = useState(null);
     useEffect(() =>{
-        axios.get('http://localhost:5000/myprofile',{
+        axios.get('https://mern-stack-jwt.herokuapp.com/myprofile',{
             headers: {
                 'x-token' : token
             }
         }).then(res => setData(res.data)).catch((err) => console.log(err))
-    },[token])
+    },[])
     if(!token){
         return <Redirect to='/login' />
     }
@@ -22,13 +22,12 @@ const Myprofile = () => {
             {
                 data &&
             <center>
-               
-                <h5 ClassName="card-title bg-success">Welcome : {data.username}</h5>
-                    <button ClassName="btn btn-primary" onClick={() => setToken(null)}>Logout</button>
-                <div ClassName="card" style={{"width": "18rem"}}>
-                <img ClassName="card-img-top" src={avatar} alt="Card image cap" />
-                <div ClassName="card-body">
-                    
+                <br />
+                <div class="card" style={{"width": "18rem"}}>
+                <img class="card-img-top" src={avatar} alt="Card image cap" />
+                <div class="card-body">
+                    <h5 class="card-title">Welcome : {data.username}</h5>
+                    <button class="btn btn-primary" onClick={() => setToken(null)}>Logout</button>
                     
                 </div>
                 </div>

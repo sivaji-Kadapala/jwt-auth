@@ -8,10 +8,9 @@ const Nav = () => {
         <div>
             
             {!token ?
-            <div>
-            <nav class="navbar navbar-expand-lg navbar-success bg-success">
-            <a class="navbar-brand" href="#" style={{color:"white"}}>TEST YANTRA 
-            </a>
+            <div >
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">TEST YANTRA</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,10 +27,10 @@ const Nav = () => {
                   <a class="nav-link disabled" href="#"></a>
                 </li>
               </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <ul  >
-                    <Link to='/register' ><li style={{color:"white"}}>Register</li></Link>
-                    <Link to='/login' ><li style={{color:"white"}}>Login</li></Link>
+              <form class="form-inline my-2 my-lg-0"  >
+                <ul>
+                    <Link to='/register' ><li ><a class="navbar-brand" href="#">Register</a></li></Link>
+                    <Link to='/login' ><li ><a class="navbar-brand" href="#">Login</a></li></Link>
                 </ul>
                 </form>
             </div>
@@ -40,7 +39,7 @@ const Nav = () => {
             </div>
             :
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Dashboard</a>
+            <a class="navbar-brand " href="#">Dashboard</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>

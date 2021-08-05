@@ -1,0 +1,64 @@
+.form-row {
+  border-radius: 5px;
+}
+input[type="text"],
+select {
+  width: 25%;
+  padding: 10px 15px;
+  margin: 10px 500px;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="email"],
+select {
+  width: 25%;
+  padding: 10px 15px;
+  margin: 10px 500px;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="password"],
+select {
+  width: 25%;
+  padding: 10px 15px;
+  margin: 10px 500px;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="confirmpassword"],
+select {
+  width: 25%;
+  padding: 10px 15px;
+  margin: 10px 500px;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="submit"] {
+  width: 25%;
+
+  margin: 10px 500px;
+  background-color: #4caf50;
+  color: white;
+
+  border: none;
+
+  cursor: pointer;
+}
+.needs-validation {
+  border-radius: 5px;
+
+  padding: 20px;
+}
+h3 {
+  width: 25%;
+
+  margin: 10px 500px;
+}
