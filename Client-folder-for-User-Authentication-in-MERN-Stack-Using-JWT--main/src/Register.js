@@ -13,7 +13,7 @@ const Register = () => {
     }
     const submitHandler = e =>{
         e.preventDefault();
-        axios.post('https://mern-auth-jwt.herokuapp.com/register',data).then(
+        axios.post('http://localhost:5000/register',data).then(
             res => {alert(res.data);setData({
                 username:'',
                 email:'',

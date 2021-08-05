@@ -14,7 +14,7 @@ const Login = () => {
     }
     const submitHandler = e =>{
         e.preventDefault();
-        axios.post('https://mern-auth-jwt.herokuapp.com/login',data).then(
+        axios.post('http://localhost:5000/login',data).then(
             res => setToken(res.data.token)//Settoken is recieved from Register component
         )
     }

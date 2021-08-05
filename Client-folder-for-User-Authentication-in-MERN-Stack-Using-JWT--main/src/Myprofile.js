@@ -8,7 +8,7 @@ const Myprofile = () => {
     const [token,setToken] = useContext(store);
     const [data,setData] = useState(null);
     useEffect(() =>{
-        axios.get('https://mern-auth-jwt.herokuapp.com/myprofile',{
+        axios.get('http://localhost:5000/myprofile',{
             headers: {
                 'x-token' : token
             }

@@ -9,21 +9,14 @@ const jwt = require('jsonwebtoken');
 //34.Now importing the middleware,go to the myprofile
 const middleware = require('./middleware');
 const cors = require('cors');
+//2.intialize the express
+const app = express();
 //----------------------------------------------------------------------------
 const path = require('path');
 const PORT=process.env.PORT || 5000
 //--------------------------------------------------------------------------
-//2.intialize the express
-const app = express();
-//------------------------------------------------------------------------------------
-app.use(express.static(path_join(__dirname,"build")))
-app.get("/*",(req,res) => {
-     res.sendFile(path.join(__dirname,"build","index.html"))
-}
-   
 
-);
-//---------------------------------------------------------------------------------------
+
 
 //5.configure the mongoose,mongoose are nosql
 mongoose.connect("mongodb+srv://JWT:JWT@cluster0.zpsst.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
@@ -38,6 +31,16 @@ mongoose.connect("mongodb+srv://JWT:JWT@cluster0.zpsst.mongodb.net/myFirstDataba
 app.use(express.json());
 
 app.use(cors({origin:"*"}))
+//------------------------------------------------------------------------------------
+
+app.get("/*",(req,res) => {
+     res.sendFile(path.join(__dirname,"build","index.html"))
+}
+   
+
+);
+//---------------------------------------------------------------------------------------
+
 //12For posting,it is asynchronous
 app.post('/register',async (req, res) =>{
     //14.it handle the database errors(try and catch)
@@ -124,6 +127,7 @@ app.get('/myprofile',middleware,async(req, res)=>{
         return res.status(500).send('Server Error')
     }
 })
+
 //3
 app.listen(PORT,()=>{
     console.log('Server running...')
